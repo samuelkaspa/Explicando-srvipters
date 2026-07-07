@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🤖 Guia Cartoon - Tudo sobre Scripts no Roblox</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{font-family:'Fredoka',sans-serif}
+  body{
+    background: linear-gradient(180deg,#87CEFA 0%,#B0E0E6 30%,#E0F7FF 55%,#FFF4B8 80%,#FFD6A5 100%);
+    background-attachment: fixed;
+    overflow-x:hidden;
+  }
+  .bolinhas{
+    position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image:
+      radial-gradient(#ffffff99 2px, transparent 2px),
+      radial-gradient(#ffffff70 1.5px, transparent 1.5px);
+    background-size: 50px 50px, 80px 80px;
+    background-position:0 0, 25px 25px;
+    animation: subir 20s linear infinite;
+  }
+  @keyframes subir{from{background-position:0 0,25px 25px}to{background-position:0 -1000px,25px -1600px}}
+  .cartao{
+    position:relative; z-index:2;
+    background:#fff;
+    border:6px solid #222;
+    border-radius:32px;
+    box-shadow:10px 12px 0 #222;
+    transition: all .6s ease;
+    opacity:0; transform: translateY(40px);
+  }
+  .cartao.visivel{opacity:1; transform:translateY(0)}
+  .titulo{
+    display:inline-block;
+    border:5px solid #222;
+    border-radius:999px;
+    box-shadow:6px 6px 0 #222;
+    padding:10px 26px;
+  }
+  .nuvem{
+    position:absolute; background:#fff; border:4px solid #222; border-radius:999px;
+    box-shadow:4px 4px 0 #222; z-index:1; opacity:.85;
+  }
+  .risco{background:repeating-linear-gradient(45deg,#0000 0 8px,#00000008 8px 10px)}
+</style>
+</head>
+<body>
+
+<div class="bolinhas"></div>
+
+<!-- CABEÇALHO -->
+<header class="relative z-10 text-center pt-14 pb-20 px-4">
+  <div class="nuvem" style="width:140px;height:50px;top:40px;left:6%"></div>
+  <div class="nuvem" style="width:100px;height:40px;top:90px;left:18%"></div>
+  <div class="nuvem" style="width:160px;height:55px;top:30px;right:8%"></div>
+  <div class="nuvem" style="width:90px;height:35px;top:110px;right:20%"></div>
+
+  <div class="inline-block bg-white border-[6px] border-black rounded-[40px] px-8 py-6 shadow-[12px_14px_0_#000]">
+    <div class="text-6xl mb-2">🎮🤖✨</div>
+    <h1 class="text-3xl md:text-5xl font-extrabold text-sky-600">TUDO SOBRE SCRIPTS NO ROBLOX</h1>
+    <p class="text-lg md:text-xl mt-2 text-gray-700">Executores · Limites · White · Grey · Black Scripter</p>
+    <p class="text-sm text-gray-500 mt-1">⬇️ Apenas vá rolando a tela para ler tudo ⬇️</p>
+  </div>
+</header>
+
+<main class="max-w-4xl mx-auto px-4 pb-24 space-y-14">
+
+<!-- O QUE É SCRIPT -->
+<section class="cartao p-6 md:p-10">
+  <div class="titulo bg-sky-300 text-xl md:text-2xl font-bold mb-5">🟢 O QUE É UM SCRIPT</div>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800">Existem <b>dois tipos</b> de script dentro do Roblox. O primeiro é o <b>oficial</b>: feito pelo próprio dono do jogo dentro do Roblox Studio, e é ele que faz TUDO funcionar — andar, pular, pegar itens, abrir portas, ganhar dinheiro, absolutamente tudo o que você vê.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3">O segundo tipo é o chamado <b>script de executor / script externo</b>. Ele <b>NÃO</b> foi feito pelo dono do jogo, não foi aprovado pela Roblox, é código escrito por pessoas de fora, para mudar, adicionar ou tirar coisas do jogo do jeito que quiserem.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3 bg-yellow-100 border-l-[6px] border-yellow-500 px-4 py-2 rounded-r-xl">⚠️ REGRA DE OURO: <b>NÃO IMPORTA SE É PARA FAZER O BEM OU O MAL</b>. Qualquer script desse tipo é contra os Termos de Serviço da Roblox, e pode levar banimento a qualquer momento, até aqueles que só servem para tirar o lag ou deixar o jogo mais bonito.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3">A linguagem usada em <b>99,9% dos casos</b> se chama <b>Lua</b>, ou melhor, <b>Luau</b>, uma versão que a própria Roblox criou, melhorou e adaptou. Os programas que rodam os scripts até usam um pouco de C++ ou C# só para conseguir "entrar" dentro do jogo, mas o código em si que as pessoas usam é quase todo Luau.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3">E um detalhe que quase ninguém fala: cerca de <b>95% DAS PESSOAS</b> que usam script, <b>NÃO SABEM FAZER NADA DO ZERO</b>. Elas só pegam código pronto na internet, colam e usam, sem saber o que tem lá dentro, se tem armadilha, se pega ban ou o que realmente pode e não pode fazer.</p>
+</section>
+
+<!-- LIMITES -->
+<section class="cartao p-6 md:p-10">
+  <div class="titulo bg-orange-300 text-xl md:text-2xl font-bold mb-5">⚠️ ELES NÃO PODEM TUDO! OS LIMITES</div>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800">Muita gente fala por aí que script é "poder de Deus", que faz absolutamente tudo. <b>ISSO É MENTIRA</b>. O script só roda <b>DENTRO DO MAPA</b>, nunca por cima de tudo, e tem limites que <b>NINGUÉM NO MUNDO CONSEGUE QUEBRAR</b>, nem o melhor executor pago que existir.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3 bg-red-100 border-l-[6px] border-red-500 px-4 py-2 rounded-r-xl">🚫 <b>NÃO consegue alterar scripts oficiais</b>: Se o criador do jogo abriu o Roblox Studio e botou um código escrito <i>"essa porta fica FECHADA PARA SEMPRE"</i>, o seu script <b>NÃO VAI CONSEGUIR MUDAR NADA DENTRO DESSE CÓDIGO</b>. Ele não tem permissão para isso.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3">A única forma de abrir nesse caso é <b>NÃO MEXENDO NO CÓDIGO DA PORTA</b>, e sim usando a própria física do jogo, ou uma outra peça/objeto do mapa para empurrar, mover ou quebrar "na marra". Se não tiver jeito pela física ou estrutura, ela fica fechada e acabou, não tem milagre.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3 bg-red-100 border-l-[6px] border-red-500 px-4 py-2 rounded-r-xl">🚫 <b>NÃO mexe em nada direto nas outras pessoas</b>: Não existe botar velocidade, mudar andar, alterar vida ou mudar o código de outro jogador direto. Tudo o que parece isso é só <b>empurrão, física, ou efeito visual só na SUA tela</b>. Lá no computador/celular do outro nada mudou.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3 bg-red-100 border-l-[6px] border-red-500 px-4 py-2 rounded-r-xl">🚫 <b>NÃO EXISTE SCRIPT DE ROBUX</b>: Esse é o maior golpe de todos. Robux fica 100% nos servidores da Roblox, <b>FORA DO MAPA</b>. O script só mexe o que está dentro do jogo. Qualquer um que fale o contrário só quer roubar a sua conta.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3">E por último: o que é controlado 100% pelo servidor do jogo, o script quase nunca muda sozinho. Você pode até escrever 1 MILHÃO na tela, mas se o servidor diz que você tem só 10 moedas, na vida real continua valendo apenas 10.</p>
+</section>
+
+<!-- EXECUTORES -->
+<section class="cartao p-6 md:p-10">
+  <div class="titulo bg-violet-300 text-xl md:text-2xl font-bold mb-5">⚙️ EXECUTORES — A FERRAMENTA OBRIGATÓRIA</div>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800"><b>SEM EXECUTOR NENHUM SCRIPT FUNCIONA, DE JEITO NENHUM</b>. Imagina o Roblox uma casa toda trancada, o script é uma pessoa de fora querendo entrar. O executor é a ferramenta que abre espaço e deixa o código rodar lá dentro — mas sempre preso dentro dos limites que já expliquei.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-4"><b>💻 NO COMPUTADOR</b> — quase só funciona direito no Windows. Os melhores e mais seguros são pagos: <b>Synapse Z, Script‑Ware, Wave, Elysian, Solara</b>. Dos gratuitos os mais conhecidos e confiáveis hoje são <b>Celery, Venyx, Wave versão livre</b>, e o antigo <b>Krnl</b> que já foi o rei mas hoje caiu bastante de qualidade.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-4"><b>📱 NO CELULAR</b> — No iPhone / iOS <b>PRATICAMENTE NÃO EXISTE NADA BOM NEM SEGURO</b>, o sistema é muito fechado, 99% é golpe. Quase todo mundo usa no <b>ANDROID</b>, onde quase sempre é o próprio aplicativo da Roblox modificado, já com o executor dentro. Os mais usados no mundo todo hoje são <b>Delta Executor, Codex, Hydrogen, versões do Arceus X, Wave e Celery</b>.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3 bg-green-100 border-l-[6px] border-green-500 px-4 py-2 rounded-r-xl">✅ Hoje em dia os executores bons já vem com <b>sistema ANTI ROUBO DE CONTA E ANTI ROUBO DE ROBUX</b> nativo, mas ainda existem MUITAS versões falsas, cheias de anúncios e armadilhas, então todo cuidado é pouco.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3">E a briga nunca acaba: Roblox atualiza o jogo → fecha o "buraco" que o executor usava → o executor para de funcionar → a equipe corrige e lança atualização de novo. E isso se repete para sempre.</p>
+</section>
+
+<!-- WHITE -->
+<section class="cartao p-6 md:p-10">
+  <div class="titulo bg-emerald-300 text-xl md:text-2xl font-bold mb-5">🤍 WHITE SCRIPTER — O LADO DO BEM</div>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800">É a pessoa que usa e cria scripts com <b>INTENÇÃO 100% BOA</b>, nunca prejudica ninguém de graça. Não é lei nem regra escrita, é um <b>código de honra</b> que eles mesmos criaram e seguem a risca.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3">Sabem todos os limites de cor e salteado, e usam o poder apenas para melhorar o jogo ou defender quem não tem como se defender: <b>tirar lag, animações gratuitas que só você vê, organizar a tela, proteger contra ser jogado longe pelo mapa</b>.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3 bg-emerald-100 border-l-[6px] border-emerald-600 px-4 py-2 rounded-r-xl">⭐ REGRA DE OURO DELES: <b>"Só atrapalho 1 ÚNICA PESSOA, se isso for para salvar, proteger ou ajudar 10, 20 ou 100 outras"</b>. Se tem alguém destruindo o servidor, matando todo mundo ou apagando o mapa, eles param <b>SÓ AQUELA PESSOA</b>, e mais nada.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3">Nunca roubam nada, nunca machucam quem está jogando quieto, não abusam de falhas para ficar ricos ou mais fortes, muitas vezes até avisam o dono do jogo para arrumar os erros, e soltam scripts bons de <b>GRAÇA</b> para todo mundo usar.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3">E a melhor parte: <b>QUANDO UM ENCONTRA OUTRO WHITE, VIRAM AMIGOS NA HORA</b>. Trocam dicas, scripts, se protegem juntos, tem lealdade total pois sabem que são do mesmo lado.</p>
+</section>
+
+<!-- GREY -->
+<section class="cartao p-6 md:p-10">
+  <div class="titulo bg-slate-300 text-xl md:text-2xl font-bold mb-5">🩶 GREY SCRIPTER — O DO MEIO TERMO</div>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800">Esse é o grupo que muita gente não sabe que existe. Ele fica <b>BEM NO MEIO</b>, <b>NÃO É 100% BOM, NEM 100% MAU</b>. <b>ÀS VEZES AJUDA, ÀS VEZES ATRAPALHA, PODE SER SEU MELHOR AMIGO OU SEU PIOR INIMIGO</b>, tudo depende do dia, do humor, ou do que ele quer naquele exato momento.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3">Não tem código de honra, não tem juramento, não segue lado nenhum. <b>HOJE</b> ele está lá do lado bom, defendendo geral, derrubando quem faz mal, ajudando iniciantes. <b>AMANHÃ DO NADA</b> fala "estou entediado" e já sai empurrando todo mundo para fora do mapa, usando farm automático, pegando vantagem, zoando geral.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3 bg-slate-100 border-l-[6px] border-slate-500 px-4 py-2 rounded-r-xl">⚖️ A GRANDE DIFERENÇA: Ele <b>QUASE NUNCA FAZ COISAS GRAVES</b>. Não apaga mapa inteiro, não sai matando todo mundo de um toque, não tenta roubar conta nem Robux. Ele só zoia o suficiente para passar o tédio, e para por aí.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3">Com o White: hoje são irmãos, amanhã já brigam. Com o Black: hoje parecem parceiros, amanhã já estão lutando um contra o outro. Com outro Grey: ajuda agora, briga daqui 10 minutos, e já está de boa mais tarde. <b>NINGUÉM NUNCA SABE O QUE ESPERAR</b>.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3">Curiosidade: cerca de <b>70% DAS PESSOAS</b> que usam script na verdade são <b>Grey</b>, mas quase todo mundo acaba rotulando só de branco ou preto, sem saber que existe o meio termo.</p>
+</section>
+
+<!-- BLACK -->
+<section class="cartao p-6 md:p-10">
+  <div class="titulo bg-red-300 text-xl md:text-2xl font-bold mb-5">🖤 BLACK SCRIPTER — SÓ PENSA EM SI MESMO</div>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800">É quem usa scripts <b>ÚNICA E EXCLUSIVAMENTE PARA FAZER O MAL</b>, se divertir <b>ÀS CUSTAS DOS OUTROS</b> ou ganhar vantagem de qualquer jeito, e <b>NÃO LIGA NEM UM POUCO</b> para quem vai sair perdendo no caminho.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3">Matam todo mundo do nada, apagam partes do mapa que não estão protegidas, enchem o servidor de lag até todo mundo ser obrigado a sair, jogam pessoas para fora do mapa, deixam paradas sem poder se mexer, <b>TUDO SÓ POR CAUSA, SÓ PARA VER OS OUTROS BRAVOS</b>.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3">Como não dá para roubar Robux pelo script, eles usam falhas mal feitas pelos donos dos jogos para roubar <b>ITENS DE DENTRO DOS MAPAS</b>: frutas caras, pets raros, armas, dinheiro, mala inteira, em jogos como Blox Fruits, Pet Simulator, Da Hood e muitos outros.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3 bg-red-100 border-l-[6px] border-red-600 px-4 py-2 rounded-r-xl">💀 A PIOR CARACTERÍSTICA DE TODAS: <b>NÃO TEM LEALDADE COM ABSOLUTAMENTE NINGUÉM, NEM MESMO COM OUTRO BLACK</b>. É cada um por si, o diabo leva o de trás. Eles atacam IGUALMENTE: quem não usa nada, White, Grey, e <b>ATÉ OUTROS BLACK SCRIPTERS</b>. Muitas vezes o próprio criador deixa armadilhas dentro do próprio script para roubar quem usa também.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3">E no fim das contas, <b>É EXATAMENTE POR CAUSA DELES</b> que a Roblox fica cada vez mais dura na segurança, fecha mais buracos, aumenta a proteção, bane mais rápido, e até os scripts bons e inofensivos acabam levando a culpa e sendo vistos como coisa ruim por todo mundo.</p>
+</section>
+
+<!-- RESUMO -->
+<section class="cartao p-6 md:p-10">
+  <div class="titulo bg-pink-300 text-xl md:text-2xl font-bold mb-5">📌 RESUMO BEM SIMPLES</div>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800">🤍 <b>WHITE</b> → Ajuda, protege, só interfere para salvar muita gente, leal, sempre explica a verdade e os limites.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-2">🩶 <b>GREY</b> → Intermediário puro. Hoje ajuda, amanhã atrapalha, amigo ou inimigo, sem regras fixas, quase nunca faz coisas extremas.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-2">🖤 <b>BLACK</b> → Só mal, só diversão própria, rouba onde tem brecha, mente que pode tudo, ataca até quem é igual ele, zero lealdade.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-4 bg-yellow-100 border-l-[6px] border-yellow-500 px-4 py-2 rounded-r-xl">Para a Roblox <b>OS 3 ESTÃO ERRADOS</b>, qualquer código injetado é quebra de regras. <b>NUNCA USE NA CONTA PRINCIPAL</b> que tem muita coisa comprada e dinheiro gasto, use sempre uma conta secundária, pois <b>NUNCA VAI EXISTIR 100% SEGURO</b>.</p>
+  <p class="text-[17px] md:text-lg leading-8 text-gray-800 mt-3">E para fechar: essa briga nunca acaba. Roblox tenta fechar tudo, executores abrem o que dá, Black estraga, White defende, Grey faz o que quiser, e o ciclo segue para sempre.</p>
+  <div class="text-center text-4xl mt-6">🎮✨ FIM ✨🎮</div>
+</section>
+
+</main>
+
+<footer class="relative z-10 text-center pb-10 text-gray-700 text-sm">
+  Feito de forma divertida e em estilo cartoon 🎨 · Apenas role e leia
+</footer>
+
+<script>
+  // SÓ APARECER SUAVE AO ROLAR — NENHUM BOTÃO, NENHUMA AÇÃO
+  const els = document.querySelectorAll('.cartao');
+  const io = new IntersectionObserver(e=>{
+    e.forEach(x=>{ if(x.isIntersecting) x.target.classList.add('visivel') })
+  },{threshold:.12});
+  els.forEach(e=>io.observe(e));
+</script>
+
+</body>
+</html>
